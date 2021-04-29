@@ -10,4 +10,6 @@
 > http://localhost:8888/ecommerce/{default}
  
 - - -
-- bootstrap.yml 은 application.yml 보다 우선 순위가 높다.
+- Local Config Setting
+- Remote Config Setting
+- Native Config Setting
