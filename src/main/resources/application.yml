@@ -4,15 +4,25 @@ server:
 spring:
   application:
     name: config-server
-#  profiles:
-#    active: native # 파일서버
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  profiles:
+    active: native # 파일서버
   cloud:
     config:
       server:
-#        native:
-#          search-locations: file://${user.home}/.......
+        native:
+          search-locations: file://${user.home}/IdeaProjects/native-file-repo
         git:
-          uri: https://github.com/Jrock30/spring-cloud-config.git # REMOTE GIT FILE CONFIG
+#          uri: https://github.com/Jrock30/spring-cloud-config.git # REMOTE GIT FILE CONFIG
 #          username: [username]
 #          password: [password]
 #          uri: file:///Users/rock/IdeaProjects/git-local-repo # LOCAL GIT FILE CONFIG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
