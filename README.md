@@ -44,3 +44,11 @@
 > - Publisher/Subscribe, Topic에 메세지 전달  
 > - Ack를 기다리지 않고 전달가능  
 > - 생산자 중심  
+
+## 설정 정보의 암호화 처리(대칭, 비대칭)
+- 암호화  
+> POST http://localhost:8888/encrypt  
+  {keyValue}
+- 복호화
+> POST http://localhost:8888/decrypt  
+> {keyValue}
