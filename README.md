@@ -51,4 +51,14 @@
   {keyValue}
 - 복호화
 > POST http://localhost:8888/decrypt  
-> {keyValue}
+  {keyValue} 
+
+### 비대칭 키
+- 키 생성 
+> keytool -genkeypair -alias apiEncryptionKey -keyalg RSA -dname "CN=Jrock, OU=API Developement, O=jrock.co.kr, L=Seoul, C=KR" -keypass "test1234" -keystore apiEncryptionKey.jks -storepass "test1234"
+- 키 확인
+> keytool -list -keystore apiEncryptionKey.jks -v
+- cer 파일 생성 ( private key ) 인증파일
+> keytool -export -alias apiEncryptionKey -keystore apiEncryptionKey.jks -rfc -file trustServer.cer
+- jks 파일 생성 ( public key )
+> keytool -import -alias trustServer -file trustServer.cer -keystore publicKey.jks
