@@ -62,3 +62,25 @@
 > keytool -export -alias apiEncryptionKey -keystore apiEncryptionKey.jks -rfc -file trustServer.cer
 - jks 파일 생성 ( public key )
 > keytool -import -alias trustServer -file trustServer.cer -keystore publicKey.jks
+
+- - -
+## 카프카 (Kafka)
+> - Kafka와 데이터를 주고받기 위해 사용하는 Java Library  
+>   https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients  
+> 
+> - Zookeeper 및 Kafka 서버 기동  
+> $ KAFKA_HOME/bin/zookeeper-server-start.sh $ KAFKA_HOME/config/zookeeper.properties  
+> $ KAFKA_HOME/bin/kafka-server-start.sh  $ KAFKA_HOME/config/server.properties
+> 
+> - Topic 생성
+> $ KAFKA_HOME/bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092 --partitions 1
+> 
+> - Topic 목록 확인
+> $ KAFKA_HOME/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+> 
+> - Topic 정보 확인
+> $ KAFKA_HOME/bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+> 
+> - Windows에서 기동
+> 모든 명령어는 $KAFKA_HOME\bin\windows 폴더에 저장  
+> .\bin\windows\zookeeper-server-start.bat  .\config\zookeeper.properties
