@@ -82,5 +82,5 @@
 > $ KAFKA_HOME/bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
 > 
 > - Windows에서 기동
-> 모든 명령어는 $KAFKA_HOME\bin\windows 폴더에 저장  
+> 모든 명령어는 $KAFKA_HOME\bin\windows 폴더에 저장
 > .\bin\windows\zookeeper-server-start.bat  .\config\zookeeper.properties
